@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b18jewoxon4dd"]
+
+[ext_resource type="Texture2D" uid="uid://cjj2c02vbnjgj" path="res://icon.svg" id="1_kvcs5"]
+[ext_resource type="Script" uid="uid://cdichsrrvg2re" path="res://Taxi/taxi.gd" id="1_ohyp0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ohyp0"]
+height = 36.0
+
+[node name="Root" type="CharacterBody2D"]
+motion_mode = 1
+slide_on_ceiling = false
+floor_stop_on_slope = false
+platform_on_leave = 2
+platform_floor_layers = 4294967040
+platform_wall_layers = 255
+script = ExtResource("1_ohyp0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+scale = Vector2(0.15625, 0.28125)
+texture = ExtResource("1_kvcs5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CapsuleShape2D_ohyp0")
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
