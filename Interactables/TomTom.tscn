@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgugfqw60luao"]
+
+[ext_resource type="Texture2D" uid="uid://cjj2c02vbnjgj" path="res://icon.svg" id="1_0m4gm"]
+[ext_resource type="Script" uid="uid://c7fkjevgtri3p" path="res://Interactables/tom_tom.gd" id="1_dn2bs"]
+
+[sub_resource type="Curve" id="Curve_dn2bs"]
+_data = [Vector2(0.103387, 0), 0.0, 0.0, 0, 0, Vector2(0.247772, 1), 0.0, 0.0, 0, 0, Vector2(0.479501, 0), 0.0, 0.0, 0, 0, Vector2(0.524064, 0), 0.0, 0.0, 0, 0, Vector2(0.750446, 1), 0.0, 0.0, 0, 0, Vector2(0.934046, 0), 0.0, 0.0, 0, 0]
+point_count = 6
+metadata/_snap_count = 2
+
+[node name="TomTom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dn2bs")
+curve = SubResource("Curve_dn2bs")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Arrow" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -300.0
+offset_right = 64.0
+offset_bottom = -172.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0m4gm")

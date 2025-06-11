@@ -6,7 +6,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ohyp0"]
 height = 36.0
 
-[node name="Root" type="CharacterBody2D"]
+[node name="Root" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 slide_on_ceiling = false
 floor_stop_on_slope = false

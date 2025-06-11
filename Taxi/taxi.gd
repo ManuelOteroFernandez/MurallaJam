@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Taxi
 
 const SPEED = 15000.0
 const SPEED_REVERSE = -5000
