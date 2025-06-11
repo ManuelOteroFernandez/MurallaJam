@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_i0tdr")
 
 [node name="etlClientPoints" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
