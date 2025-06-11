@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://bve3vteljtmmm"]
+
+[ext_resource type="Script" uid="uid://bhyrv8cn5f57m" path="res://GameTimer/game_timer_ui.gd" id="1_gh7e7"]
+
+[node name="GameTimerUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gh7e7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 216.0
+offset_bottom = 120.0
+
+[node name="rtlMin" type="RichTextLabel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 50
+text = "00"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="rtl" type="RichTextLabel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/normal_font_size = 50
+text = ":"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="rtlSec" type="RichTextLabel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 50
+text = "00"
+scroll_active = false
+vertical_alignment = 1
