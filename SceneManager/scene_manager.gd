@@ -4,13 +4,14 @@ class_name SceneManager extends Node
 
 @onready var menu_main = preload("res://Ui/menu_main.tscn")
 @onready var menu_controls = preload("res://Ui/menu_controls.tscn")
+@onready var menu_end_game = preload("res://Ui/MenuEndGame.tscn")
 @onready var tsm : TransitionManagerClass = $UI/TransitionManager
 
 signal open_level_end_signal
 signal pause_signal
 
 enum MENU_TYPE { CREDITS, CONTROLS }
-enum Transition_to { None, MainMenu, Level, Credits, Controls, CloseMenu }
+enum Transition_to { None, MainMenu, Level, Credits, Controls, CloseMenu, EndGame }
 
 var next_scene = null
 var current_transition = Transition_to.None
@@ -48,6 +49,20 @@ func open_main_menu():
 	current_transition = Transition_to.MainMenu
 	pause(true)
 	tsm.start_transition(transition)
+
+func open_menu_end_game():
+	current_transition = Transition_to.EndGame
+	pause(true)
+	tsm.start_transition(transition)
+	
+	await tsm.mid_transition_signal
+	
+	$CurrentSceneStack.get_child(0).queue_free()
+	var instance = menu_end_game.instantiate()
+	$CurrentSceneStack.add_child(instance)
+	if instance.has_method("set_default_focus"):
+		instance.set_default_focus()
+	
 	
 func _on_mid_open_main_menu():	
 	$CurrentSceneStack.get_child(0).queue_free()
@@ -87,10 +102,11 @@ func _on_mid_transition():
 		tsm.end_transition()
 	
 	if current_transition == Transition_to.Level:
-		$CurrentSceneStack.get_child(0).queue_free()
+		var first_in_stack = $CurrentSceneStack.get_child(0)
+		first_in_stack.queue_free()
+		first_in_stack.reparent(self)
 		var scene_node:Node = load(next_scene).instantiate()
 		$CurrentSceneStack.add_child(scene_node)
-		$CurrentSceneStack.move_child(scene_node,0)
 		
 	elif current_transition == Transition_to.MainMenu:
 		_on_mid_open_main_menu()
@@ -113,10 +129,11 @@ func _on_end_transition():
 		current_transition = Transition_to.None
 		
 		
+		
 func is_open_any_menu():
 	return (current_transition != Transition_to.Level and \
 	$CurrentSceneStack.get_children().back().is_in_group("menu")) or \
-	current_transition in [Transition_to.MainMenu, Transition_to.Credits, Transition_to.Controls, Transition_to.CloseMenu]
+	current_transition in [Transition_to.MainMenu, Transition_to.Credits, Transition_to.Controls, Transition_to.CloseMenu, Transition_to.EndGame]
 	
 
 func _input(event: InputEvent) -> void: 

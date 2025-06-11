@@ -15,10 +15,15 @@ run/main_scene="uid://bselyc7o5vsy"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PointManager="*res://PointSystem/point_manager.gd"
+
 [global_group]
 
 player=""
 menu=""
+interactableManager=""
 
 [input]
 

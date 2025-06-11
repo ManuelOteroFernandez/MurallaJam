@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=4 uid="uid://5ruw74llt0oy"]
+[gd_scene load_steps=11 format=4 uid="uid://5ruw74llt0oy"]
 
-[ext_resource type="PackedScene" uid="uid://b53ir0yjydubt" path="res://PointSystem/PointManager.tscn" id="1_0e4q0"]
 [ext_resource type="Texture2D" uid="uid://cjj2c02vbnjgj" path="res://icon.svg" id="1_8kxvc"]
 [ext_resource type="PackedScene" uid="uid://botnajt3udvgw" path="res://GameTimer/GameTimerManager.tscn" id="1_du32p"]
 [ext_resource type="PackedScene" uid="uid://b18jewoxon4dd" path="res://Taxi/taxi.tscn" id="1_hj316"]
@@ -149,10 +148,6 @@ sources/0 = SubResource("TileSetAtlasSource_8kxvc")
 
 [node name="GameTimerManager" parent="." instance=ExtResource("1_du32p")]
 
-[node name="PointManager" parent="." node_paths=PackedStringArray("interactableManager", "player") instance=ExtResource("1_0e4q0")]
-interactableManager = NodePath("../InteractableManager")
-player = NodePath("../Player")
-
 [node name="InteractableManager" parent="." node_paths=PackedStringArray("tomTom", "player") instance=ExtResource("1_xa3da")]
 tomTom = NodePath("../CanvasLayer/TomTom")
 player = NodePath("../Player")
@@ -190,6 +185,5 @@ metadata/_edit_lock_ = true
 [node name="TomTom" parent="CanvasLayer" instance=ExtResource("5_0e4q0")]
 metadata/_edit_lock_ = true
 
-[node name="PointsUi" parent="CanvasLayer" node_paths=PackedStringArray("point_manager") instance=ExtResource("6_tt1rd")]
-point_manager = NodePath("../../PointManager")
+[node name="PointsUi" parent="CanvasLayer" instance=ExtResource("6_tt1rd")]
 metadata/_edit_lock_ = true
