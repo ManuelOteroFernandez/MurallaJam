@@ -2,6 +2,7 @@ extends Node2D
 class_name SpotBase
 
 enum TYPE {
+	NONE,
 	PERSON,
 	PARTY
 }

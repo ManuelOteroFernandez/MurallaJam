@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://5ruw74llt0oy"]
+[gd_scene load_steps=10 format=4 uid="uid://5ruw74llt0oy"]
 
+[ext_resource type="PackedScene" uid="uid://b53ir0yjydubt" path="res://PointSystem/PointManager.tscn" id="1_0e4q0"]
 [ext_resource type="Texture2D" uid="uid://cjj2c02vbnjgj" path="res://icon.svg" id="1_8kxvc"]
 [ext_resource type="PackedScene" uid="uid://b18jewoxon4dd" path="res://Taxi/taxi.tscn" id="1_hj316"]
 [ext_resource type="PackedScene" uid="uid://bukhitq7q7rch" path="res://Interactables/InteractableManager.tscn" id="1_xa3da"]
 [ext_resource type="PackedScene" uid="uid://cqom6d435wt10" path="res://Interactables/SpotBase.tscn" id="2_tt1rd"]
 [ext_resource type="PackedScene" uid="uid://dgugfqw60luao" path="res://Interactables/TomTom.tscn" id="5_0e4q0"]
+[ext_resource type="PackedScene" uid="uid://bjsw6woiewse1" path="res://PointSystem/PointsUI.tscn" id="6_tt1rd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kxvc"]
 texture = ExtResource("1_8kxvc")
@@ -143,6 +145,10 @@ sources/0 = SubResource("TileSetAtlasSource_8kxvc")
 
 [node name="TestWorld" type="Node"]
 
+[node name="PointManager" parent="." node_paths=PackedStringArray("interactableManager", "player") instance=ExtResource("1_0e4q0")]
+interactableManager = NodePath("../InteractableManager")
+player = NodePath("../Player")
+
 [node name="InteractableManager" parent="." node_paths=PackedStringArray("tomTom", "player") instance=ExtResource("1_xa3da")]
 tomTom = NodePath("../CanvasLayer/TomTom")
 player = NodePath("../Player")
@@ -152,14 +158,14 @@ position = Vector2(-1, 64)
 
 [node name="SpotBase3" parent="InteractableManager" instance=ExtResource("2_tt1rd")]
 position = Vector2(985, -172)
+type = 2
 
 [node name="SpotBase2" parent="InteractableManager" instance=ExtResource("2_tt1rd")]
 position = Vector2(852, 227)
-type = 1
 
 [node name="SpotBase4" parent="InteractableManager" instance=ExtResource("2_tt1rd")]
 position = Vector2(122, -36)
-type = 1
+type = 2
 
 [node name="Player" parent="." instance=ExtResource("1_hj316")]
 
@@ -175,3 +181,6 @@ tile_set = SubResource("TileSet_irxll")
 
 [node name="TomTom" parent="CanvasLayer" instance=ExtResource("5_0e4q0")]
 metadata/_edit_lock_ = true
+
+[node name="PointsUi" parent="CanvasLayer" node_paths=PackedStringArray("point_manager") instance=ExtResource("6_tt1rd")]
+point_manager = NodePath("../../PointManager")

@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Taxi
 
+signal recieve_damage
+
 const SPEED = 15000.0
 const SPEED_REVERSE = -5000
 
@@ -42,9 +44,13 @@ func _physics_process(delta: float) -> void:
 		
 	if get_slide_collision_count() > 0:
 		var col:KinematicCollision2D = get_last_slide_collision()
-		_last_col_normal = col.get_normal()
-		_is_damaged = true
-		$DamageTimer.start()
+		_damage(col)
+
+func _damage(col:KinematicCollision2D):
+	recieve_damage.emit()
+	_last_col_normal = col.get_normal()
+	_is_damaged = true
+	$DamageTimer.start()
 
 func _move(delta: float) -> void:
 	if _movement_input < 0:
