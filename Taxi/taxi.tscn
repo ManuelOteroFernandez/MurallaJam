@@ -7,6 +7,7 @@
 height = 36.0
 
 [node name="Root" type="CharacterBody2D" groups=["player"]]
+z_index = 1
 motion_mode = 1
 slide_on_ceiling = false
 floor_stop_on_slope = false

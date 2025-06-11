@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 		set_value_no_signal(100*_time_accumulated/max_time)
 		if _time_accumulated >= max_time:
 			timeout.emit()
+			hide()
 			
 	elif value > 0:
 		_time_accumulated -= delta

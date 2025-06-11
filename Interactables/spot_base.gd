@@ -21,7 +21,11 @@ func active():
 
 func _on_interaction_completed():
 	deactivate.emit()
+	$Icon.stop()
+	
+	await create_tween().tween_property(self,"modulate",Color.TRANSPARENT,1).finished
 	visible = false
+	modulate = Color.WHITE
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 	spot_visibility.emit(true)

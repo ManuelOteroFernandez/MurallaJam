@@ -14,7 +14,8 @@ var sm:SceneManager
 
 func _ready() -> void:
 	sm = get_tree().current_scene as SceneManager
-	sm.open_level_end_signal.connect(initialize)
+	if sm:
+		sm.open_level_end_signal.connect(initialize)
 
 func initialize() -> void:
 	if sm.is_open_any_menu(): return
