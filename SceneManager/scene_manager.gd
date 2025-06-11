@@ -18,7 +18,7 @@ var current_transition = Transition_to.None
 var current_level_index = 0
 
 const level_list = [
-	"res://Test/Test_world.tscn"
+	"res://Levels/level01.tscn"
 ]
 
 func _ready() -> void:

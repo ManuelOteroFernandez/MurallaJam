@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bjsw6woiewse1" path="res://PointSystem/PointsUI.tscn" id="6_tt1rd"]
 [ext_resource type="PackedScene" uid="uid://bve3vteljtmmm" path="res://GameTimer/GameTimerUI.tscn" id="7_y7sgu"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kxvc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fqq8h"]
 texture = ExtResource("1_8kxvc")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -142,7 +142,7 @@ texture = ExtResource("1_8kxvc")
 
 [sub_resource type="TileSet" id="TileSet_irxll"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_8kxvc")
+sources/0 = SubResource("TileSetAtlasSource_fqq8h")
 
 [node name="TestWorld" type="Node"]
 
