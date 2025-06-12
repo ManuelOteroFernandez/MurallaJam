@@ -3,7 +3,7 @@ class_name Taxi
 
 signal recieve_damage
 
-const SPEED = 15000.0
+const SPEED = 20000.0
 const SPEED_REVERSE = -5000
 
 const STOP_VELOCITY = 0.01
@@ -29,9 +29,9 @@ func _rotation_input():
 	
 	if (left_input or rigth_input) and left_input != rigth_input:
 		if left_input:
-			_turn(-1)
+			_turn(-1 if _current_speed > 0 else 1)
 		else:
-			_turn(1)
+			_turn(1 if _current_speed > 0 else -1)
 
 func _physics_process(delta: float) -> void:
 
@@ -70,13 +70,22 @@ func _move(delta: float) -> void:
 		
 func _input(event: InputEvent) -> void:	
 	if event.is_action_pressed("accelerate"):
+		$Luz.active_ligth(true)
+		$Luz2.active_ligth(true)
+		$Luz_Tracera.active_ligth(false)
 		_movement_input = -1
 	if event.is_action_released("accelerate"):
+		$Luz.active_ligth(false)
+		$Luz2.active_ligth(false)
 		_movement_input = 0
 		
 	if event.is_action_pressed("reverse"):
+		$Luz.active_ligth(false)
+		$Luz2.active_ligth(false)
+		$Luz_Tracera.active_ligth(true)
 		_movement_input = 1
 	if event.is_action_released("reverse"):
+		$Luz_Tracera.active_ligth(false)
 		_movement_input = 0
 		
 func _accelerate():
