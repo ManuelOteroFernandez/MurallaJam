@@ -29,3 +29,5 @@ func _process(delta: float) -> void:
 		if value <= 0:
 			hide()
 	
+func get_remaining_time() -> float:
+	return max_time - _time_accumulated

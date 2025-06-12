@@ -36,8 +36,14 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		$ProgressBar.start_count()
+		_on_taxi_in_area(body as Taxi)
+		
+func _on_taxi_in_area(_taxi:Taxi):
+	$ProgressBar.start_count()
 	
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		$ProgressBar.stop_count()
+		_on_taxi_out_area(body as Taxi)
+		
+func _on_taxi_out_area(_taxi:Taxi):
+	$ProgressBar.stop_count()

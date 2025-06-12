@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://djrqcg46n106i"]
+
+[ext_resource type="PackedScene" uid="uid://cqom6d435wt10" path="res://Interactables/SpotBase.tscn" id="1_fgq4t"]
+[ext_resource type="Script" uid="uid://dgx3na1protpa" path="res://spot_person.gd" id="2_dwvyv"]
+[ext_resource type="Texture2D" uid="uid://1mmt2dwxr6qc" path="res://circle.png" id="3_dwvyv"]
+[ext_resource type="Script" uid="uid://br17mk3wnv0ox" path="res://Interactables/person.gd" id="4_dcfxl"]
+
+[node name="SpotBase" instance=ExtResource("1_fgq4t")]
+script = ExtResource("2_dwvyv")
+color = Color(0, 1, 1, 1)
+person_pos = Vector2(1, 0)
+
+[node name="Person" type="Sprite2D" parent="." index="4"]
+position = Vector2(0, 100)
+scale = Vector2(0.144531, 0.144531)
+texture = ExtResource("3_dwvyv")
+script = ExtResource("4_dcfxl")
+
+[connection signal="deactivate" from="." to="Person" method="_on_spot_base_deactivate"]
