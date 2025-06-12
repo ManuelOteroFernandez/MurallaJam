@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctjuxkeh04n8i"]
+[gd_scene load_steps=3 format=3 uid="uid://ctjuxkeh04n8i"]
 
 [ext_resource type="Script" uid="uid://fmadywde1bl3" path="res://UI/menu_main.gd" id="1_ltcc5"]
+[ext_resource type="Texture2D" uid="uid://x5cp2037sd2e" path="res://Taxi_background.jpeg" id="2_bp7uk"]
 
 [node name="MenuMain" type="Control" groups=["menu"]]
 layout_mode = 3
@@ -10,6 +11,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ltcc5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bp7uk")
+expand_mode = 3
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -53,20 +64,20 @@ theme_override_font_sizes/font_size = 30
 text = "Gearing up"
 flat = true
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="btnButtons" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 30
-text = "Enciende motores"
+text = "Controls"
 flat = true
 
-[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="btnCredits" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 30
-text = "Enciende motores"
+text = "Explanations"
 flat = true
 
 [node name="Control2" type="Control" parent="MarginContainer/VBoxContainer"]
@@ -74,3 +85,5 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/btnStart" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/btnButtons" to="." method="_on_btn_buttons_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/btnCredits" to="." method="_on_btn_credits_pressed"]

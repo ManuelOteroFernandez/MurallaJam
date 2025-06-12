@@ -1,20 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cja8l7xujasow"]
+[gd_scene load_steps=4 format=3 uid="uid://bgt6o8ypi8mb3"]
 
-[ext_resource type="Script" uid="uid://xjogfl1e2hom" path="res://UI/menu_controls.gd" id="1_26t6l"]
-[ext_resource type="Texture2D" uid="uid://c3ftxq6ha3a2j" path="res://square.png" id="2_nwutf"]
+[ext_resource type="Script" uid="uid://xjogfl1e2hom" path="res://UI/menu_controls.gd" id="1_sjmrr"]
+[ext_resource type="Texture2D" uid="uid://c3ftxq6ha3a2j" path="res://square.png" id="2_1vbiv"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7d3kj"]
-texture = ExtResource("2_nwutf")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4dvi"]
+texture = ExtResource("2_1vbiv")
 modulate_color = Color(0, 0, 0, 1)
 
-[node name="MenuControls" type="Control"]
+[node name="MenuCredits" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_26t6l")
+script = ExtResource("1_sjmrr")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_7d3kj")
+theme_override_styles/panel = SubResource("StyleBoxTexture_b4dvi")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -47,18 +47,20 @@ alignment = 1
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 100
-text = "Controls"
+theme_override_font_sizes/normal_font_size = 96
+text = "Explanations"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
+[node name="Control3" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "W -> Accelerate
-S -> Brake and reverse
-A -> Turn left
-D -> Trun right"
+text = "It's party o'clock! Got no dough? Hey, take 5 minutes in that taxi of yours, and we'll see ya when you're rolling in it! We're planning to blow every single penny!
+Quick tip: Don't crash into the customers, or they won't pay up!"
 fit_content = true
 horizontal_alignment = 1
 

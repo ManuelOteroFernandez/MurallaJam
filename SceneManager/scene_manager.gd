@@ -4,6 +4,7 @@ class_name SceneManager extends Node
 
 @onready var menu_main = preload("res://Ui/menu_main.tscn")
 @onready var menu_controls = preload("res://Ui/menu_controls.tscn")
+@onready var menu_credits = preload("res://Ui/menu_credits.tscn")
 @onready var menu_end_game = preload("res://Ui/MenuEndGame.tscn")
 @onready var tsm : TransitionManagerClass = $UI/TransitionManager
 
@@ -87,6 +88,8 @@ func  _on_mid_open_menu():
 	match current_transition:
 		Transition_to.Controls:
 			node = menu_controls.instantiate()
+		Transition_to.Credits:
+			node = menu_credits.instantiate()
 		
 	if node:
 		$CurrentSceneStack.add_child(node)

@@ -15,9 +15,9 @@ script = ExtResource("1_gh7e7")
 clip_contents = true
 layout_mode = 1
 offset_left = 50.0
-offset_top = 50.0
+offset_top = 30.0
 offset_right = 216.0
-offset_bottom = 120.0
+offset_bottom = 100.0
 
 [node name="rtlMin" type="RichTextLabel" parent="HBoxContainer"]
 layout_mode = 2

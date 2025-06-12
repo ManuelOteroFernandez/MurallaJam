@@ -10,3 +10,17 @@ func _on_btn_start_pressed() -> void:
 		sm.open_level(0)
 	else:
 		printerr("MenuMain not find SceneManaer")
+
+
+func _on_btn_buttons_pressed() -> void:
+	if sm:
+		sm.open_menu(SceneManager.MENU_TYPE.CONTROLS)
+	else:
+		printerr("MenuMain not find SceneManaer")
+
+
+func _on_btn_credits_pressed() -> void:
+	if sm:
+		sm.open_menu(SceneManager.MENU_TYPE.CREDITS)
+	else:
+		printerr("MenuMain not find SceneManaer")
