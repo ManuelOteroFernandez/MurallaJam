@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://b6ssbpvpm2cgk"]
+[gd_scene load_steps=13 format=4 uid="uid://b6ssbpvpm2cgk"]
 
 [ext_resource type="PackedScene" uid="uid://botnajt3udvgw" path="res://GameTimer/GameTimerManager.tscn" id="1_7f61k"]
 [ext_resource type="PackedScene" uid="uid://bukhitq7q7rch" path="res://Interactables/InteractableManager.tscn" id="2_yrlwc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c3ftxq6ha3a2j" path="res://square.png" id="5_2mml1"]
 [ext_resource type="PackedScene" uid="uid://bve3vteljtmmm" path="res://GameTimer/GameTimerUI.tscn" id="6_jwcxg"]
 [ext_resource type="PackedScene" uid="uid://dgugfqw60luao" path="res://Interactables/TomTom.tscn" id="7_o53ws"]
+[ext_resource type="PackedScene" uid="uid://djrqcg46n106i" path="res://Interactables/spot_person.tscn" id="8_7f61k"]
 [ext_resource type="PackedScene" uid="uid://bjsw6woiewse1" path="res://PointSystem/PointsUI.tscn" id="8_kdp18"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_6vddt"]
@@ -53,11 +54,158 @@ pattern_0 = SubResource("TileMapPattern_6vddt")
 tomTom = NodePath("../CanvasLayer/TomTom")
 player = NodePath("../Player")
 
+[node name="SpotBasePerson" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(284, -176)
+
+[node name="SpotBasePerson2" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(-534, -181)
+
+[node name="SpotBasePerson3" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(1301, -179)
+
+[node name="SpotBasePerson4" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(1301, 524)
+
+[node name="SpotBasePerson5" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(3317, -119)
+
+[node name="SpotBasePerson7" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(-1213, -857)
+
+[node name="SpotBasePerson8" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(-1381, 641)
+rotation = 1.56223
+
+[node name="SpotBasePerson9" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(-417, 648)
+rotation = 4.6347
+
+[node name="SpotBasePerson10" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(511, 883)
+rotation = 4.6347
+
+[node name="SpotBasePerson11" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(-404, 1576)
+rotation = 4.6347
+
+[node name="SpotBasePerson12" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(-411, 2114)
+rotation = 4.6347
+
+[node name="SpotBasePerson13" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(-1399, 2137)
+rotation = 4.6347
+
+[node name="SpotBasePerson14" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(512, -825)
+rotation = 4.6347
+
+[node name="SpotBasePerson15" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(1421, -1512)
+rotation = 3.16999
+
+[node name="SpotBasePerson16" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(2013, -877)
+rotation = 1.51751
+
+[node name="SpotBasePerson17" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(2439, -184)
+rotation = -0.0280404
+
+[node name="SpotBasePerson18" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(3128, -1037)
+rotation = 1.32977
+
+[node name="SpotBasePerson19" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(1186, 2028)
+rotation = 1.32977
+
+[node name="SpotBasePerson20" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(-2115, 733)
+rotation = 1.32977
+
+[node name="SpotBasePerson6" parent="InteractableManager" instance=ExtResource("8_7f61k")]
+position = Vector2(2646, -1501)
+rotation = -0.487819
+
 [node name="SpotBase" parent="InteractableManager" instance=ExtResource("3_qlusc")]
-position = Vector2(-1, 64)
+position = Vector2(-590, -973)
+type = 2
 
 [node name="SpotBase2" parent="InteractableManager" instance=ExtResource("3_qlusc")]
-position = Vector2(1431, -191)
+position = Vector2(1442, -983)
+type = 2
+
+[node name="SpotBase3" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(692, -1952)
+type = 2
+
+[node name="SpotBase4" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(2559, -839)
+type = 2
+
+[node name="SpotBase5" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(3092, -1972)
+type = 2
+
+[node name="SpotBase6" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(1969, 527)
+type = 2
+
+[node name="SpotBase7" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(690, 537)
+type = 2
+
+[node name="SpotBase8" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(3, 1017)
+type = 2
+
+[node name="SpotBase9" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(-902, 1017)
+type = 2
+
+[node name="SpotBase10" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(-669, 2447)
+type = 2
+
+[node name="SpotBase11" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(-2, 2447)
+type = 2
+
+[node name="SpotBase12" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(827, 2381)
+type = 2
+
+[node name="SpotBase13" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(494, 1703)
+type = 2
+
+[node name="SpotBase14" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(1178, 1479)
+type = 2
+
+[node name="SpotBase15" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(-1358, 1603)
+type = 2
+
+[node name="SpotBase16" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(-2091, 1122)
+type = 2
+
+[node name="SpotBase17" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(-1970, -78)
+type = 2
+
+[node name="SpotBase18" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(1888, -188)
+type = 2
+
+[node name="SpotBase19" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(1882, -1940)
+type = 2
+
+[node name="SpotBase20" parent="InteractableManager" instance=ExtResource("3_qlusc")]
+position = Vector2(-864, -179)
 type = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -67,7 +215,7 @@ tile_set = SubResource("TileSet_82t60")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_qvap4")]
-position = Vector2(508, -176)
+position = Vector2(296, -260)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.5, 1.5)
