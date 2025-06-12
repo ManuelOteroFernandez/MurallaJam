@@ -12,6 +12,8 @@ signal deactivate
 
 @export var type = TYPE.PERSON
 
+var taxi:Taxi
+
 func _ready() -> void:
 	visible = false
 	$ProgressBar.timeout.connect(_on_interaction_completed)
@@ -26,6 +28,7 @@ func _on_interaction_completed():
 	await create_tween().tween_property(self,"modulate",Color.TRANSPARENT,1).finished
 	visible = false
 	modulate = Color.WHITE
+	taxi.person_in_taxi(type == TYPE.PERSON)
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 	spot_visibility.emit(true)
@@ -38,7 +41,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		_on_taxi_in_area(body as Taxi)
 		
-func _on_taxi_in_area(_taxi:Taxi):
+func _on_taxi_in_area(taxi:Taxi):
+	self.taxi = taxi
 	$ProgressBar.start_count()
 	
 func _on_area_2d_body_exited(body: Node2D) -> void:

@@ -110,3 +110,5 @@ func _on_damage_expired():
 	_is_damaged = false
 	_current_speed = 0
 		
+func person_in_taxi(value:bool):
+	$Circle.visible = value

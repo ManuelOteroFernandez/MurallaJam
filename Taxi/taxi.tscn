@@ -62,6 +62,7 @@ scale = Vector2(0.144531, 0.144531)
 texture = ExtResource("5_s81fr")
 
 [node name="Circle" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-1.19209e-07, -3)
 scale = Vector2(0.144531, 0.144531)
 texture = ExtResource("5_s81fr")
