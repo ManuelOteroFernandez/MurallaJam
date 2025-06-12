@@ -21,9 +21,13 @@ func stop():
 	
 
 func _process(delta: float) -> void:
+	if _target == null: 
+		return
+	
 	if _acumulated_time >= _max_time:
 		stop()
 		visible = false
+		return
 	
 	_acumulated_time += delta
 	global_position = global_position.lerp(_target.global_position,0.01)
