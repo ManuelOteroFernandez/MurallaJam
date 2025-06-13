@@ -2,10 +2,10 @@ class_name SceneManager extends Node
 
 @export var transition = TransitionManagerClass.Transitions.FADE
 
-@onready var menu_main = preload("res://Ui/menu_main.tscn")
-@onready var menu_controls = preload("res://Ui/menu_controls.tscn")
-@onready var menu_credits = preload("res://Ui/menu_credits.tscn")
-@onready var menu_end_game = preload("res://Ui/MenuEndGame.tscn")
+@onready var menu_main = preload("res://UI/menu_main.tscn")
+@onready var menu_controls = preload("res://UI/menu_controls.tscn")
+@onready var menu_credits = preload("res://UI/menu_credits.tscn")
+@onready var menu_end_game = preload("res://UI/MenuEndGame.tscn")
 @onready var tsm : TransitionManagerClass = $UI/TransitionManager
 
 signal open_level_end_signal
