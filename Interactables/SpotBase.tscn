@@ -65,7 +65,10 @@ script = ExtResource("3_cv30d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_5duwn")
+disabled = true
 
+[connection signal="activate" from="." to="Icon" method="start_psychedelic_animation"]
+[connection signal="deactivate" from="." to="Icon" method="stop"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://5ruw74llt0oy"]
+[gd_scene load_steps=12 format=4 uid="uid://5ruw74llt0oy"]
 
 [ext_resource type="Texture2D" uid="uid://cjj2c02vbnjgj" path="res://icon.svg" id="1_8kxvc"]
 [ext_resource type="PackedScene" uid="uid://botnajt3udvgw" path="res://GameTimer/GameTimerManager.tscn" id="1_du32p"]
 [ext_resource type="PackedScene" uid="uid://b18jewoxon4dd" path="res://Taxi/taxi.tscn" id="1_hj316"]
 [ext_resource type="PackedScene" uid="uid://bukhitq7q7rch" path="res://Interactables/InteractableManager.tscn" id="1_xa3da"]
 [ext_resource type="PackedScene" uid="uid://cqom6d435wt10" path="res://Interactables/SpotBase.tscn" id="2_tt1rd"]
+[ext_resource type="PackedScene" uid="uid://djrqcg46n106i" path="res://Interactables/spot_person.tscn" id="4_du32p"]
 [ext_resource type="PackedScene" uid="uid://dgugfqw60luao" path="res://Interactables/TomTom.tscn" id="5_0e4q0"]
 [ext_resource type="PackedScene" uid="uid://bjsw6woiewse1" path="res://PointSystem/PointsUI.tscn" id="6_tt1rd"]
 [ext_resource type="PackedScene" uid="uid://bve3vteljtmmm" path="res://GameTimer/GameTimerUI.tscn" id="7_y7sgu"]
@@ -153,7 +154,12 @@ tomTom = NodePath("../CanvasLayer/TomTom")
 player = NodePath("../Player")
 
 [node name="SpotBase" parent="InteractableManager" instance=ExtResource("2_tt1rd")]
-position = Vector2(295, 37)
+position = Vector2(1, -40)
+type = 2
+
+[node name="SpotBase2" parent="InteractableManager" instance=ExtResource("4_du32p")]
+position = Vector2(0, 86)
+person_pos = Vector2(0, 100)
 
 [node name="Player" parent="." instance=ExtResource("1_hj316")]
 

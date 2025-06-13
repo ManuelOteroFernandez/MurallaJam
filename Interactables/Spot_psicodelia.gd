@@ -13,6 +13,7 @@ func stop():
 	scale_tween.kill()
 
 func _ready():
+	
 	start_psychedelic_animation()
 	
 func start_psychedelic_animation():

@@ -9,6 +9,7 @@ var is_running = false
 var _time_accumulated: float = 0
 
 func start_count():
+	set_process(true)
 	is_running = true
 	show()
 	
@@ -20,8 +21,12 @@ func _process(delta: float) -> void:
 		_time_accumulated += delta
 		set_value_no_signal(100*_time_accumulated/max_time)
 		if _time_accumulated >= max_time:
-			timeout.emit()
 			hide()
+			is_running = false
+			set_process(false)
+			value = 0
+			_time_accumulated = 0
+			timeout.emit()
 			
 	elif value > 0:
 		_time_accumulated -= delta

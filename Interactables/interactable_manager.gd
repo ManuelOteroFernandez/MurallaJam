@@ -17,6 +17,10 @@ func _ready() -> void:
 		printerr("No Spots childrens")
 		
 	_change_spot_active()
+	PointManager.client_0_points.connect(_on_clinet_0_points)
+	
+func _on_clinet_0_points():
+	_change_spot_active()
 
 func _change_spot_active():
 	var search_spot_type = SpotBase.TYPE.PERSON
@@ -25,6 +29,8 @@ func _change_spot_active():
 	if _active_spot:
 		_active_spot.spot_visibility.disconnect(_on_spot_visibility_change)
 		_active_spot.deactivate.disconnect(_on_spot_deactivate)
+		if _active_spot.is_spot_active():
+			_active_spot.deactive()
 		old_type = _active_spot.type
 		if _active_spot.type == SpotBase.TYPE.PERSON:
 			search_spot_type = SpotBase.TYPE.PARTY

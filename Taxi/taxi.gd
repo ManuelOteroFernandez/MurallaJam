@@ -10,10 +10,14 @@ const STOP_VELOCITY = 0.01
 const ACCELERATION_VELOCITY = 0.02
 const ROTATION_VELOCITY = 2
 
+@onready var person_scn = preload("res://Taxi/person_taxi.tscn") 
+
 var _movement_input: int = 0
 var _current_speed: float = 0
 var _is_damaged = false
 var _last_col_normal: Vector2 = Vector2.ZERO
+
+var _person:PersonTaxi = null
 
 func _ready() -> void:
 	$DamageTimer.timeout.connect(_on_damage_expired)
@@ -68,7 +72,7 @@ func _move(delta: float) -> void:
 	move_and_slide()
 	
 		
-func _input(event: InputEvent) -> void:	
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("accelerate"):
 		$Luz.active_ligth(true)
 		$Luz2.active_ligth(true)
@@ -110,5 +114,11 @@ func _on_damage_expired():
 	_is_damaged = false
 	_current_speed = 0
 		
-func person_in_taxi(value:bool):
-	$Circle.visible = value
+func person_in_taxi(value:bool, color:Color = Color.WHITE):
+	if value:
+		_person = person_scn.instantiate() as PersonTaxi
+		_person.initialize(Vector2.ZERO,color)
+		add_child(_person)
+	elif _person:
+		_person.client_out()
+		_person = null

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv4y6v6mhrbwj"]
+
+[ext_resource type="PackedScene" uid="uid://br3sv1obqkhvk" path="res://Interactables/person.tscn" id="1_b402j"]
+[ext_resource type="Script" uid="uid://bt0lopk5ra4a1" path="res://Interactables/person_taxi.gd" id="2_tb6wf"]
+
+[node name="Person" instance=ExtResource("1_b402j")]
+script = ExtResource("2_tb6wf")
