@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b6ssbpvpm2cgk"]
+[gd_scene load_steps=15 format=4 uid="uid://b6ssbpvpm2cgk"]
 
 [ext_resource type="PackedScene" uid="uid://botnajt3udvgw" path="res://GameTimer/GameTimerManager.tscn" id="1_7f61k"]
 [ext_resource type="PackedScene" uid="uid://bukhitq7q7rch" path="res://Interactables/InteractableManager.tscn" id="2_yrlwc"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://djrqcg46n106i" path="res://Interactables/spot_person.tscn" id="8_7f61k"]
 [ext_resource type="PackedScene" uid="uid://bjsw6woiewse1" path="res://PointSystem/PointsUI.tscn" id="8_kdp18"]
 [ext_resource type="Texture2D" uid="uid://ci1l6aa0yjqax" path="res://discontinous_line.png" id="10_qlusc"]
+[ext_resource type="PackedScene" uid="uid://c8end2t5oddic" path="res://UI/touch_controls.tscn" id="11_qvap4"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_6vddt"]
 tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 0, 131072, 2, 0, 196608, 2, 0, 262144, 2, 0, 327680, 2, 0, 1, 2, 0, 65537, 2, 0, 131073, 2, 0, 196609, 2, 0, 262145, 2, 0, 327681, 2, 0, 2, 2, 0, 65538, 2, 0, 131074, 2, 0, 196610, 2, 0, 262146, 2, 0, 327682, 2, 0, 3, 2, 0, 65539, 2, 0, 131075, 2, 0, 196611, 2, 0, 262147, 2, 0, 327683, 2, 0, 4, 2, 0, 65540, 2, 0, 131076, 2, 0, 196612, 2, 0, 262148, 2, 0, 327684, 2, 0, 5, 2, 0, 65541, 2, 0, 131077, 2, 0, 196613, 2, 0, 262149, 2, 0, 327685, 2, 0)
@@ -465,3 +466,5 @@ metadata/_edit_lock_ = true
 
 [node name="PointsUi" parent="CanvasLayer" instance=ExtResource("8_kdp18")]
 metadata/_edit_lock_ = true
+
+[node name="TouchControls" parent="CanvasLayer" instance=ExtResource("11_qvap4")]
