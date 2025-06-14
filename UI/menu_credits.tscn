@@ -1,11 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgt6o8ypi8mb3"]
+[gd_scene load_steps=3 format=3 uid="uid://bgt6o8ypi8mb3"]
 
 [ext_resource type="Script" uid="uid://xjogfl1e2hom" path="res://UI/menu_controls.gd" id="1_sjmrr"]
-[ext_resource type="Texture2D" uid="uid://c3ftxq6ha3a2j" path="res://square.png" id="2_1vbiv"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4dvi"]
-texture = ExtResource("2_1vbiv")
-modulate_color = Color(0, 0, 0, 1)
+[ext_resource type="Texture2D" uid="uid://x5cp2037sd2e" path="res://Taxi_background.jpeg" id="2_sjmrr"]
 
 [node name="MenuCredits" type="Control"]
 layout_mode = 3
@@ -16,6 +12,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sjmrr")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sjmrr")
+expand_mode = 3
+
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -23,7 +29,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_b4dvi")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -69,8 +74,10 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
-clip_contents = true
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "Back"
 flat = true
 
