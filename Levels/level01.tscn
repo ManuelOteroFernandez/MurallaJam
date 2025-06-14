@@ -59,52 +59,53 @@ player = NodePath("../Player")
 
 [node name="SpotBasePerson" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(284, -176)
+person_pos = Vector2(0, 100)
 
 [node name="SpotBasePerson2" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(-534, -181)
+person_pos = Vector2(0, 100)
 
 [node name="SpotBasePerson3" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(1301, -179)
+person_pos = Vector2(0, -100)
 
 [node name="SpotBasePerson4" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(1301, 524)
+person_pos = Vector2(0, -100)
 
 [node name="SpotBasePerson5" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(3317, -119)
 
 [node name="SpotBasePerson7" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(-1213, -857)
+person_pos = Vector2(100, 100)
 
 [node name="SpotBasePerson8" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(-1381, 641)
-person_pos = Vector2(0, 100)
 
 [node name="SpotBasePerson9" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(-417, 648)
-person_pos = Vector2(0, 100)
 
 [node name="SpotBasePerson10" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(511, 883)
-person_pos = Vector2(0, 100)
 
 [node name="SpotBasePerson11" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(-404, 1576)
-person_pos = Vector2(0, 100)
 
 [node name="SpotBasePerson12" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(-411, 2114)
-person_pos = Vector2(0, 0)
 
 [node name="SpotBasePerson13" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(-1424, 2180)
-person_pos = Vector2(100, 100)
+person_pos = Vector2(-100, 100)
 
 [node name="SpotBasePerson14" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(512, -825)
-person_pos = Vector2(0, 100)
+person_pos = Vector2(-100, 0)
 
 [node name="SpotBasePerson15" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(1421, -1512)
+person_pos = Vector2(0, -100)
 
 [node name="SpotBasePerson16" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(2013, -877)
@@ -115,19 +116,19 @@ position = Vector2(2439, -184)
 
 [node name="SpotBasePerson18" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(3128, -1037)
-person_pos = Vector2(0, -100)
+person_pos = Vector2(-100, 0)
 
 [node name="SpotBasePerson19" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(1186, 2028)
-person_pos = Vector2(0, -100)
+person_pos = Vector2(-100, 0)
 
 [node name="SpotBasePerson20" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(-2115, 733)
-person_pos = Vector2(0, -100)
+person_pos = Vector2(-100, 0)
 
 [node name="SpotBasePerson6" parent="InteractableManager" instance=ExtResource("8_7f61k")]
 position = Vector2(2646, -1501)
-person_pos = Vector2(-100, 0)
+person_pos = Vector2(0, -100)
 
 [node name="SpotBase" parent="InteractableManager" instance=ExtResource("3_qlusc")]
 position = Vector2(-590, -973)
@@ -440,7 +441,7 @@ texture_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_qvap4")]
-position = Vector2(296, -260)
+position = Vector2(510, -75)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.5, 1.5)
