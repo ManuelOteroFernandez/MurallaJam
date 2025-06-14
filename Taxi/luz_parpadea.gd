@@ -10,6 +10,6 @@ func active_ligth(value:bool):
 			self,
 			"modulate:a",
 			alpha,
-			randi_range(1,3)
+			randi_range(1,2)
 		)
 	

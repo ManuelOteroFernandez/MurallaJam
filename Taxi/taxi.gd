@@ -10,7 +10,10 @@ const STOP_VELOCITY = 0.01
 const ACCELERATION_VELOCITY = 0.02
 const ROTATION_VELOCITY = 2
 
+const MAX_DEFORM = 0.2
+
 @onready var person_scn = preload("res://Taxi/person_taxi.tscn") 
+@onready var _deform_curve: Curve = load("res://Taxi/deform_curve.tres")
 
 var _movement_input: int = 0
 var _current_speed: float = 0
@@ -24,6 +27,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	_rotation_input()
+	_deform_by_speed()
 	
 func _rotation_input():
 	if _is_damaged: return
@@ -40,8 +44,7 @@ func _rotation_input():
 func _physics_process(delta: float) -> void:
 
 	if _is_damaged:
-		_stop()
-		velocity = (_last_col_normal * abs(_current_speed) / 2) * delta
+		velocity = (_last_col_normal * abs(5000) / 2) * delta
 		move_and_slide()
 	else:
 		_move(delta)
@@ -51,9 +54,17 @@ func _physics_process(delta: float) -> void:
 		_damage(col)
 
 func _damage(col:KinematicCollision2D):
+	_current_speed = 0
 	recieve_damage.emit()
 	_last_col_normal = col.get_normal()
 	_is_damaged = true
+	
+	var t = create_tween()
+	t.tween_property(self,"modulate",Color.INDIAN_RED,$DamageTimer.wait_time/2)
+	t.tween_property(self,"modulate",Color.WHITE,$DamageTimer.wait_time/2)
+	#t.tween_property(self,"modulate",Color.INDIAN_RED,$DamageTimer.wait_time/4)
+	#t.tween_property(self,"modulate",Color.WHITE,$DamageTimer.wait_time/4)
+		
 	$DamageTimer.start()
 
 func _move(delta: float) -> void:
@@ -122,3 +133,7 @@ func person_in_taxi(value:bool, color:Color = Color.WHITE):
 	elif _person:
 		_person.client_out()
 		_person = null
+
+func _deform_by_speed():
+	var deform = _deform_curve.sample_baked(_current_speed/SPEED) * MAX_DEFORM
+	scale = Vector2(1-deform,1+deform)
