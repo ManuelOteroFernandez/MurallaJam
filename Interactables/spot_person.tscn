@@ -7,7 +7,7 @@
 
 [node name="SpotBase" instance=ExtResource("1_fgq4t")]
 script = ExtResource("2_dwvyv")
-person_pos = Vector2(1, 0)
+person_pos = Vector2(100, 0)
 
 [node name="Person" parent="." index="4" instance=ExtResource("3_dwvyv")]
 position = Vector2(0, 100)
