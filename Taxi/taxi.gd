@@ -12,8 +12,8 @@ const ROTATION_VELOCITY = 2
 
 const MAX_DEFORM = 0.2
 
-@onready var person_scn = preload("res://Taxi/person_taxi.tscn") 
-@onready var _deform_curve: Curve = load("res://Taxi/deform_curve.tres")
+@export var person_scn: PackedScene
+@export var deform_curve: Curve
 
 var _movement_input: int = 0
 var _current_speed: float = 0
@@ -135,5 +135,5 @@ func person_in_taxi(value:bool, color:Color = Color.WHITE):
 		_person = null
 
 func _deform_by_speed():
-	var deform = _deform_curve.sample_baked(_current_speed/SPEED) * MAX_DEFORM
+	var deform = deform_curve.sample_baked(_current_speed/SPEED) * MAX_DEFORM
 	scale = Vector2(1-deform,1+deform)

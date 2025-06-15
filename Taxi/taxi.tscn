@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b18jewoxon4dd"]
+[gd_scene load_steps=11 format=3 uid="uid://b18jewoxon4dd"]
 
 [ext_resource type="Script" uid="uid://cdichsrrvg2re" path="res://Taxi/taxi.gd" id="1_ohyp0"]
 [ext_resource type="Texture2D" uid="uid://bg4kronhtuvqs" path="res://Taxi/Luz.png" id="2_i4e3u"]
+[ext_resource type="PackedScene" uid="uid://cv4y6v6mhrbwj" path="res://Taxi/person_taxi.tscn" id="2_n2iey"]
 [ext_resource type="Texture2D" uid="uid://c3ftxq6ha3a2j" path="res://square.png" id="2_ohyp0"]
 [ext_resource type="Script" uid="uid://bisfo02qabd1y" path="res://Taxi/luz_parpadea.gd" id="3_1f4ur"]
+[ext_resource type="Curve" uid="uid://cve4jwqgayhnf" path="res://Taxi/deform_curve.tres" id="3_gefu3"]
 [ext_resource type="Texture2D" uid="uid://1mmt2dwxr6qc" path="res://circle.png" id="5_s81fr"]
 [ext_resource type="PackedScene" uid="uid://br3sv1obqkhvk" path="res://Interactables/person.tscn" id="6_ogyvs"]
 [ext_resource type="Script" uid="uid://bt0lopk5ra4a1" path="res://Interactables/person_taxi.gd" id="7_vp6sb"]
@@ -20,6 +22,8 @@ platform_on_leave = 2
 platform_floor_layers = 4294967040
 platform_wall_layers = 255
 script = ExtResource("1_ohyp0")
+person_scn = ExtResource("2_n2iey")
+deform_curve = ExtResource("3_gefu3")
 
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 0.5
